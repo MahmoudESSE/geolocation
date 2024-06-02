@@ -1,0 +1,3 @@
+[submodule "omnitrack"]
+	path = omnitrack
+	url = git@github.com:MahmoudESSE/omnitrack.git
