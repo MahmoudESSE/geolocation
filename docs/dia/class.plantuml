@@ -1,0 +1,49 @@
+@startuml
+class User {
+        +id
+        +username
+        +address
+        +phone
+        +email
+        +cin
+        +password
+        +login()
+        +signup()
+        +adjustSpeedLimit()
+        +assignZone()
+}
+
+class Admin {
+        +company
+        +assignTracker()
+        +revokeTracker()
+}
+
+class Employee {
+        +first_name
+        +last_name
+}
+
+class Tracker {
+        +id
+        +latitude
+        +longtitude
+        +date
+        +imei
+        +sendCurrentPosition()
+        +sendCurrentSpeed()
+}
+
+class History {
+        +id
+        +deleteOldLogs()
+}
+
+User ^-- Admin
+User ^-- Employee
+History o-- Tracker
+
+Employee "1.1" -- "0.*" Admin
+Employee "0.*" -- "0.1" Tracker
+Admin "0.*" -- "1.1" Tracker
+@enduml
